@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -Q >/home/phon1209/dotfiles/installed_package.txt
+sudo pacman -Qq >/home/phon1209/dotfiles/installed_package.txt

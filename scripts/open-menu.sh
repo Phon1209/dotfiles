@@ -1,4 +1,4 @@
 #!/bin/bash
-killall wofi
+killall rofi
 sleep 0.1
-wofi --show drun
+rofi -show drun -theme ~/.config/rofi/default-theme.rasi
