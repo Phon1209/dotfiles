@@ -1,0 +1,101 @@
+{
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{}",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "hyprland/window": {},
+  // "hyprland/window": {
+  //   "rewrite": {
+  //     "(.*) - Visual Studio Code": " $1",
+  //     "(.*) — Mozilla Firefox": " $1"
+  //   },
+  //   "separate-outputs": true
+  // },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "blueman": "bluetooth"
+      //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "timezones": ["America/New_York", "Asia/Bangkok"],
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": "{:%OH:%M}",
+    "format-alt": "{:%Y-%m-%d}",
+    //    "locale": "{:%a %m %d}",
+    "calendar": {
+      "mode": "month"
+    },
+    "actions": {
+      "on-click-right": "tz_up"
+    }
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "tooltip": false,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""]
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 50,
+      "critical": 30
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": "",
+    "tooltip": true,
+    "tooltip-format-wifi": "{ifname} via {essid} w/ {gwaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-ethernet": "{ifname} via {gwaddr}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "{icon} ",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/exit": {
+    "format": "",
+    "tooltip": false,
+    "tooltip-format": "Powermenu",
+    "on-click": "shutdown -h now"
+  }
+}

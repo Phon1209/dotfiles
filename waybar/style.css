@@ -1,0 +1,117 @@
+/* Variables */
+@define-color badgeColor #CEEAB0;
+@define-color badgeBackgroundColor #3F621A;
+
+@define-color utilBrand-800 #335015;
+@define-color utilBrand-700 #3F621A;
+@define-color utilBrand-300 #ACDC79;
+@define-color utilBrand-200 #CEEAB0;
+@define-color utilBrand-50 #F5FBEE;
+
+/* Base Styling */
+
+* {
+  font-family:
+    "FiraCode Nerd Font", "Fira Sans Semibold", "Font Awesome 6 Free";
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+  /* background-color: rgba(26, 40, 11, 0.2); */
+  background-color: transparent;
+  border-bottom: 0px solid #ffffff;
+  /* color: #FFFFFF; */
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+/* Right-side Quick Badge */
+.modules-right {
+  /* border: 1px solid red; */
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0 4px;
+  margin: 4px;
+  border-radius: 12px;
+}
+
+#pulseaudio,
+#cpu,
+#temperature,
+#network,
+#battery,
+#tray,
+#clock {
+  margin-right: 4px;
+  font-weight: bold;
+  color: @utilBrand-200;
+  /* background: @utilBrand-200; */
+  border-radius: 8px;
+  padding: 0px 6px;
+  font-size: 20px;
+  /* border: 1px solid red; */
+}
+
+/* Workspaces */
+
+#workspaces {
+  background: rgba(43, 66, 18, 0.205);
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+
+#workspaces button {
+  /* padding: 5px; */
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 700;
+
+  border-radius: 50%;
+  border: 0px;
+  color: @utilBrand-200;
+  transition: all 0.3s ease-in-out;
+  margin-left: 2px;
+}
+
+#workspaces button:first-child {
+  margin-left: 0px;
+}
+
+/* Current workspaces */
+#workspaces button.active {
+  color: @utilBrand-700;
+  background: @utilBrand-200;
+  border-radius: 50%;
+  /* min-width: 40px; */
+  transition: all 0.3s ease-in-out;
+}
+
+/* On hover */
+#workspaces button:hover {
+  color: @utilBrand-800;
+  background: @utilBrand-300;
+  border-radius: 15px;
+}
+
+/* No window is opened in this workspace */
+#workspaces button.empty {
+  color: rgba(245, 251, 238, 0.356);
+}
+
+#workspaces button.empty:hover,
+#workspaces button.empty.active {
+  color: black;
+}
+
+/* Power Button */
+#custom-exit {
+  color: @utilBrand-200;
+  border-radius: 8px;
+  padding: 2px;
+  font-size: 14px;
+  margin-left: 4px;
+  margin-right: 8px;
+  font-size: 20px;
+}
