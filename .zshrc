@@ -107,5 +107,5 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 eval "$(zoxide init zsh)"
 
 if [[ -z $DISPLAY && $(tty) == "/dev/tty1" ]]; then
-    exec Hyprland
+    exec start-hyprland
 fi
