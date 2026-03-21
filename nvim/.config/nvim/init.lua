@@ -7,7 +7,5 @@ _G.dd = function(...)
 end
 vim.print = _G.dd
 
-
-
 require("vim-option")
 require("config.lazy")
