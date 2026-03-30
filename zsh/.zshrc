@@ -106,6 +106,11 @@ source $ZSH/oh-my-zsh.sh
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 eval "$(zoxide init zsh)"
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [[ -z $DISPLAY && $(tty) == "/dev/tty1" ]]; then
     exec start-hyprland
 fi
