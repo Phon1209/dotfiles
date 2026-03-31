@@ -23,6 +23,7 @@
 configuration {
     modi:           "dmenu";
     show-icons:     true;
+    icon-theme:     "Papirus";
 }
 
 /*****----- Main Window -----*****/

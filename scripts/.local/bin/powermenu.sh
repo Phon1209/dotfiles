@@ -21,7 +21,7 @@ logout="Logout"
 # Configure the Icon here
 entry_shutdown="$shutdown\0icon\x1fsystem-shutdown"
 entry_reboot="$reboot\0icon\x1fsystem-reboot"
-entry_suspend="$suspend\0icon\x1fsystem-suspend"
+entry_suspend="$suspend\0icon\x1fsystem-hibernate"
 entry_logout="$logout\0icon\x1fsystem-log-out"
 
 # Launch rofi dmenu
@@ -32,8 +32,12 @@ chosen=$(printf "$entry_shutdown\n$entry_reboot\n$entry_suspend\n$entry_logout" 
     -no-custom)
 
 # Confirmation prompt for destructive actions
+
+entry_yes="Yes\0icon\x1fdialog-apply"
+entry_no="No\0icon\x1fdialog-cancel"
+
 confirm() {
-  printf 'Yes\nNo' | rofi -dmenu -p "  $1 — are you sure?" -theme "$THEME" -no-custom
+  printf "$entry_yes\n$entry_no" | rofi -dmenu -theme "$THEME" -no-custom -theme-str "listview {columns: 2;}" -icon-theme "Papirus-Dark"
 }
 
 case "$chosen" in
