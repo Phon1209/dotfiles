@@ -1,0 +1,6 @@
+# ~/dotfiles/.stow-local-ignore
+installed_package.txt
+pkglist.txt
+aur-pkglist.txt
+install.sh
+README.md
