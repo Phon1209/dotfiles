@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case "$1" in
+"up")
+  brillo -q -A 2
+  ;;
+"down")
+  brillo -q -U 2
+  ;;
+esac
+
+level=$(printf "%.0f" "$(brillo -q -G)")
+
+notify-osd brightness Brightness $level

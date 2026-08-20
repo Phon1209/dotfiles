@@ -98,10 +98,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 16
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 16
 
     # Padding between text and icon.
     text_icon_padding = 12
@@ -111,7 +111,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#27272a"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -144,11 +144,11 @@
 
     ### Text ###
 
-    font = FiraCode Nerd Font 12
+    font = FiraCode Nerd Font 14
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 0
+    line_height = 3
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -186,7 +186,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<span foreground='#fff'><b>%s</b></span>\n<span foreground='#cecfd2'>%b</span>"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -224,7 +224,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = Papirus-Dark, hicolor
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -234,13 +234,13 @@
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 32
+    min_icon_size = 36
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 36
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Papirus-Dark/32x32/apps/:/usr/share/icons/Papirus-Dark/32x32/status/:/usr/share/icons/hicolor/32x32/apps/
 
     ### History ###
 
@@ -273,7 +273,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 12
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -328,7 +328,7 @@
     # will be executed in sequence.
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_right_click = context
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -350,28 +350,34 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    background = "#13161b"
     timeout = 10
     # Icon for notifications with low urgency
-    default_icon = dialog-information
+    # default_icon = dialog-information
 
 [urgency_normal]
-    background = "#000000"
-    foreground = "#ffffff"
+    background = "#13161b"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
-    default_icon = dialog-information
+    # default_icon = dialog-information
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    background = "#55160c"
+    frame_color = "#f04438"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency
-    default_icon = dialog-warning
+    # default_icon = dialog-warning
+
+
+[system-osd]
+    appname = "system-osd"
+    foreground = "#fafafa"
+    frame_color = "#52525b"
+    format = "<span foreground='#fafafa'>%s</span> %b"
+    timeout = 2
+
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

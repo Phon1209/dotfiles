@@ -1,0 +1,18 @@
+#!/bin/bash
+# $1: dunst stack tag
+# $2: Title
+# $3: Value (text or integer)
+
+if [[ $3 =~ [^0-9] ]]; then
+  # Text value
+  echo "$3"
+  notify-send -a "system-osd" \
+    -h string:x-dunst-stack-tag:$1 \
+    "$2" "$3"
+else
+  # Value integer
+  notify-send -a "system-osd" \
+    -h int:value:$3 \
+    -h string:x-dunst-stack-tag:$1 \
+    "$2"
+fi
