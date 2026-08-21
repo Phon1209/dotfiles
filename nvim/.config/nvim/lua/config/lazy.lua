@@ -65,10 +65,3 @@ require("lazy").setup({
 
 require("catppuccin").setup()
 vim.cmd.colorscheme("catppuccin")
-
-local config = require("nvim-treesitter.configs")
-config.setup({
-	ensure_install = { "lua", "javascript", "astro", "css" },
-	highlight = { enable = true },
-	indent = { enable = true },
-})
